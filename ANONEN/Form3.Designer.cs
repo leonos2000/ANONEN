@@ -31,12 +31,12 @@ namespace ANONEN
         {
             this.btnInstall = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.cBoxDriver = new System.Windows.Forms.ComboBox();
+            this.comboDriver = new System.Windows.Forms.ComboBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboDepartment = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -60,16 +60,14 @@ namespace ANONEN
             this.label2.Size = new System.Drawing.Size(80, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Select driver";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // cBoxDriver
+            // comboDriver
             // 
-            this.cBoxDriver.FormattingEnabled = true;
-            this.cBoxDriver.Location = new System.Drawing.Point(262, 56);
-            this.cBoxDriver.Name = "cBoxDriver";
-            this.cBoxDriver.Size = new System.Drawing.Size(140, 21);
-            this.cBoxDriver.TabIndex = 3;
-            this.cBoxDriver.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboDriver.FormattingEnabled = true;
+            this.comboDriver.Location = new System.Drawing.Point(262, 56);
+            this.comboDriver.Name = "comboDriver";
+            this.comboDriver.Size = new System.Drawing.Size(140, 21);
+            this.comboDriver.TabIndex = 3;
             // 
             // lblStatus
             // 
@@ -78,7 +76,7 @@ namespace ANONEN
             this.lblStatus.Location = new System.Drawing.Point(22, 212);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStatus.Size = new System.Drawing.Size(38, 15);
+            this.lblStatus.Size = new System.Drawing.Size(36, 15);
             this.lblStatus.TabIndex = 5;
             this.lblStatus.Text = "ready";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -106,15 +104,14 @@ namespace ANONEN
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(140, 20);
             this.textBox1.TabIndex = 8;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // comboBox2
+            // comboDepartment
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(262, 83);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(140, 21);
-            this.comboBox2.TabIndex = 11;
+            this.comboDepartment.FormattingEnabled = true;
+            this.comboDepartment.Location = new System.Drawing.Point(262, 83);
+            this.comboDepartment.Name = "comboDepartment";
+            this.comboDepartment.Size = new System.Drawing.Size(140, 21);
+            this.comboDepartment.TabIndex = 11;
             // 
             // label1
             // 
@@ -132,12 +129,12 @@ namespace ANONEN
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 252);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboDepartment);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.cBoxDriver);
+            this.Controls.Add(this.comboDriver);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnInstall);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -153,12 +150,12 @@ namespace ANONEN
 
         private System.Windows.Forms.Button btnInstall;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cBoxDriver;
+        private System.Windows.Forms.ComboBox comboDriver;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboDepartment;
         private System.Windows.Forms.Label label1;
     }
 }

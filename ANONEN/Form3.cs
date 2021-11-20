@@ -19,34 +19,31 @@ namespace ANONEN
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form3_Load(object sender, EventArgs e)
         {
-            var drivers = Drivers.GetDirectories(@"E:\Drivers\");
-            for (int i = 0; i < drivers.Length; i++)
+            Config.loadConfig();
+            fillComboDriver();
+            fillComboDepartment();
+        }
+
+        private void fillComboDepartment()
+        {
+            List<string> items = new List<string>();
+            for (int i = 0; i < Config.all.presets.Count; i++)
+            {
+                items.Add(Config.all.presets[i].name);
+            }
+            comboDepartment.Items.AddRange(items.ToArray());
+        }
+
+        private void fillComboDriver()
+        {
+            var drivers = Drivers.GetDirectories(Config.all.driversLocation);
+            for (int i = 0; i<drivers.Length; i++)
             {
                 drivers[i] = new DirectoryInfo(drivers[i]).Name;
             }
-            cBoxDriver.Items.AddRange(drivers);
+            comboDriver.Items.AddRange(drivers);
         }
 
         private void btnInstall_Click(object sender, EventArgs e)
@@ -57,7 +54,7 @@ namespace ANONEN
 
         private bool validateSelection()
         {
-            if (cBoxDriver.SelectedIndex == -1)
+            if (comboDriver.SelectedIndex == -1)
             {
                 lblStatus.Text = "Driver not selected!";
                 return true;
@@ -69,7 +66,7 @@ namespace ANONEN
         {
             Drivers drvinstall = new Drivers();
 
-            drvinstall.StartInstallation(drvInstallProgressChanged, drvInstallEnd, Drivers.GetDirectories(@"E:\Drivers\")[cBoxDriver.SelectedIndex]);
+            drvinstall.StartInstallation(drvInstallProgressChanged, drvInstallEnd, Drivers.GetDirectories(Config.all.driversLocation)[comboDriver.SelectedIndex]);
             return false;
         }
 
