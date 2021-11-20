@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Whitelist config.json file
+
+!/ANONEN/ANONEN/bin/Debug/config.json
